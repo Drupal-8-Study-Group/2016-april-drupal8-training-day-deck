@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>D8 Test Drive - Module Development</title>
+
+		<meta name="description" content="An introduction to Drupal 8.">
+		<meta name="author" content="Nick Selvaggio">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="sego/sego_style.css">
+
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+    <header>
+      <div class="stack-starter">
+        <blockquote>StackStarter.io/spin</blockquote>
+      </div>
+      <div class="spin-code">
+        <blockquote>Spin Code: #trainingday</blockquote>
+      </div>
+    </header>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Drupal 8</h1>
+          <h5>Long Island</h5>
+          <img class="no-style-image" style= "width: 160px;" src="images/d8_logo.png"/>
+          <h6>Training Day</h6>
+					<p>
+						<small><a href="http://www.nickgs.com">Nick Selvaggio</a></small> |
+            <small><a href="#">Rich von Rauchhaupt</a> </small> |
+            <small><a href="#">Mai Irie</a></small>
+					</p>
+				</section>
+
+        <section>
+          <h2>A little about me.</h2>
+        </section>
+
+				<section data-transition="linear" data-background="#527c97" data-background-transition="slide">
+					<h2>A little about you.</h2>
+					<aside class="notes">
+              <ul>
+                <li>Who is familar with OO concepts?</li>
+                <li>How many are familar with D7 module development</li>
+                <li>Who loves D7 development?</li>
+                <li>Who is excited about Drupal 8?</li>
+              </ul>
+            </aside>
+				</section>
+
+				<section>
+					<h2>Play Along!</h2>
+					<img src="images/ss_logo_blkbg.png" class="no-style-image" style="width: 360px;"/>
+					<blockquote>StackStarter.io/spin</blockquote>
+          <blockqoute style="font-size: .8em">Spin Code: #trainingday</blockquote>
+					<aside class="notes">
+              <ul>
+                <li>We will be going through alot of content!</li>
+                <li>A spin has been configured for your enjoyment!</li>
+              </ul>
+            </aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Let's talk Drupal...</h2>
+						<aside class="notes">
+              <ul>
+                <li>Talk a bit about the history of Drupal.</li>
+                <li>Initial release 2001</li>
+              </ul>
+            </aside>
+					</section>
+          <section>
+            <h2>What is Drupal?</h2>
+            <aside class="notes">
+              <ul>
+                <li>Modular CMS</li>
+                <li>More then a CMS.</li>
+              </ul>
+            </aside>
+          </section>
+					<section>
+						<h2>Where have we come from?</h2>
+						<blockquote>Our many stages of evolution</blockquote>
+						<img src="http://i.giphy.com/EpB8oRhHSQcnu.gif"/>
+						<aside class="notes">
+              <ul>
+                <li>8 Major versions</li>
+              </ul>
+            </aside>
+					</section>
+					<section>
+						<h2>Where are we going?</h2>
+						<blockquote>A revolution is happening!</blockquote>
+						<img src="http://i.giphy.com/TM08ClADyrUC4.gif"/>
+					</section>
+					<section>
+						<h2>Who uses Drupal?</h2>
+					</section>
+          <section>
+            <h2>Memorial Sloan Kettering Cancer Center (MSK)</h2>
+            <p>
+              One of the largest cancer centers in the United States, launched the new <a href="mskcc.org">mskcc.org </a> in May. It chose Drupal 8, even when the software was still in its beta phase, to help extend the reach of its "More Science. Less Fear" campaign.
+            </p>
+          </section>
+          <section>
+            <h2>CH2M</h2>
+            <p>
+              <a href="http://www.ch2m.com/">CH2M</a> is a global corporation that works to keep governments, infrastructure, and environments sustainable. It uses Drupal 8 to present and prove its capabilities.
+            </p>
+          </section>
+          <section>
+            <h2>Many, Many, Many More</h2>
+            <p><a href="https://www.drupal.com/showcases">https://www.drupal.com/showcases</a></p>
+          </section>
+				</section>
+
+				<section>
+					<section>
+             <h2>Lets step back...</h2>
+             <p>Lets talk about the C in CMS</p>
+             <aside class="notes">
+              <ul>
+                <li>Lay the ground work to introduce core terminology</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+             <h2>Content First</h2>
+             <aside class="notes">
+              <ul>
+                <li>Think about our content first.</li>
+                <li>Decontruct what the content we are wanting to manage in order to structure it.</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+             <h2>Structuring our content</h2>
+             <aside class="notes">
+              <ul>
+                <li>Unstuctured vs Structured Content</li>
+                <li>Reusing content in different channels</li>
+              </ul>
+            </aside>
+          </section>
+				</section>
+        <section>
+          <section>
+             <h2>Some terminology</h2>
+             <img src="http://i.giphy.com/DjtjxCB1SEDtu.gif"/>
+             <aside class="notes">
+              <ul>
+                <li>Unstuctured vs Structured Content</li>
+                <li>Reusing content in different channels</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+             <h2>Entities</h2>
+             <div class="fragment" data-fragment-index="1">Nodes</div>
+             <div class="fragment" data-fragment-index="2">Taxonomy</div>
+             <div class="fragment" data-fragment-index="3">Users</div>
+             <div class="fragment" data-fragment-index="4">Comments</div>
+             <div class="fragment" data-fragment-index="5">...</div>
+             <aside class="notes">
+              <ul>
+                <li>You are define your own.</li>
+                <li>Growing number of CORE entities (ex. Blocks)</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+             <h2>Fields</h2>
+             <div class="fragment" data-fragment-index="1">Text</div>
+             <div class="fragment" data-fragment-index="2">Numbers</div>
+             <div class="fragment" data-fragment-index="3">Select Lists</div>
+             <div class="fragment" data-fragment-index="5">...</div>
+            <aside class="notes">
+              <ul>
+                <li>You are define your own.</li>
+                <li>Growing number of CORE entities (ex. Tel, Email)</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+             <h2>Fields can be "bundled" with Entities</h2>
+             <div class="fragment" data-fragment-index="1">Nodes -> Content Types</div>
+             <div class="fragment" data-fragment-index="2">Taxonomy -> Vocabularies</div>
+            <aside class="notes">
+              <ul>
+                <li>"Fieldable" entities</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+             <h2>Views</h2>
+             <div class="fragment" data-fragment-index="1">Define Lists of Content</div>
+             <div class="fragment" data-fragment-index="2">Define how to output the given list</div>
+            <aside class="notes">
+              <ul>
+                <li>Visual SQL builder</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+
+				<section>
+					<section>
+						<h2>Lets dive in!</h2>
+						<img src="images/dive_in.gif"/>
+					</section>
+				</section>
+			</div>
+		<footer class="sego-logo">
+      <a href="http://www.segosolutions.net/"><img src="sego/sego_logo_blkbg.png" alt="Sego Solutions logo" height=50" /></a>
+    </footer>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Parallax scrolling
+				//parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				//parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
