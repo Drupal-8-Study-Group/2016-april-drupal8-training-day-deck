@@ -1,43 +1,41 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-
+  <head>
+    <meta charset="utf-8">
 		<title>Exploring Drupal 8 - Training Day</title>
+    <meta name="description" content="An introduction to Drupal 8.">
+    <meta name="author" content="Nick Selvaggio">
 
-		<meta name="description" content="An introduction to Drupal 8.">
-		<meta name="author" content="Nick Selvaggio">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-		<link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="sego/sego_style.css">
 
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-	<body>
+  <body>
     <header>
       <div class="stack-starter">
         <blockquote>StackStarter.io/spin</blockquote>
@@ -47,60 +45,114 @@
       </div>
     </header>
 
-		<div class="reveal">
+    <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>Drupal 8</h1>
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Drupal 8</h1>
           <h5>Long Island</h5>
           <img class="no-style-image" style= "width: 160px;" src="images/d8_logo.png"/>
           <h6>Training Day</h6>
-					<p>
-						<small><a href="http://www.nickgs.com">Nick Selvaggio</a></small> |
+          <p>
+            <small><a href="http://www.nickgs.com">Nick Selvaggio</a></small> |
             <small><a href="#">Rich von Rauchhaupt</a> </small> |
             <small><a href="#">Mai Irie</a></small>
-					</p>
-				</section>
-
-        <section>
-          <h2>A little about us.</h2>
+          </p>
         </section>
 
-				<section data-transition="linear" data-background="#527c97" data-background-transition="slide">
-					<h2>A little about you.</h2>
-					<aside class="notes">
+        <section>
+          <section>
+            <h2>A little about us.</h2>
+          </section>
+
+          <!-- About Nick slide -->
+          <section>
+            <p>
+              <img class="photo" src="" />
+            </p>
+            <p>Hi! I'm Nick. I'm a ___ @ <br />
+              <img class="clean" src="" />
+            </p>
+          </section>
+
+          <!-- About Rich slide -->
+          <section>
+            <p>
+              <img class="photo" src="" />
+            </p>
+            <p>Hi! I'm Rich. I'm a ____ @ <br />
+              <img class="clean" src="" />
+            </p>
+          </section>
+
+          <!-- About Mai slide -->
+          <section>
+            <p>
+              <img class="photo" src="images/mirie.png" />
+            </p>
+            <p>Hi! I'm Mai. I'm a senior developer @ <br />
+              <img class="clean" src="images/p2_logo_reverse.png" />
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <h2>About LIDUG</h2>
+          <p>About Long Island Drupal User Group</p>
+          <aside class="notes">
+            <ul>
+              <li>About LIDUG</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Try Drupal</h2>
+          <p><a href="http://www.trydrupal8.com">TryDrupal8.com</a></p>
+          <p>Even Moar Information: <a href="http://www.talkingdrupal.com/">Talking Drupal Podcast</a></p>
+          <aside class="notes">
+            <ul>
+              <li>Try Drupal platform</li>
+              <li>About the podcast: http://www.talkingdrupal.com/</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section data-transition="linear" data-background="#527c97" data-background-transition="slide">
+          <h2>A little about you.</h2>
+          <aside class="notes">
               <ul>
                 <li>How many have experience with Drupal 7? 6?</li>
                 <li>From other environments? Ruby, Python, .NET</li>
                 <li>Who is excited about Drupal 8?</li>
               </ul>
             </aside>
-				</section>
+        </section>
 
-				<section>
-					<h2>Play Along!</h2>
-					<img src="images/ss_logo_blkbg.png" class="no-style-image" style="width: 360px;"/>
-					<blockquote>StackStarter.io/spin</blockquote>
-          <blockqoute style="font-size: .8em">Spin Code: #trainingday</blockquote>
-					<aside class="notes">
+        <section>
+          <h2>Play Along!</h2>
+          <img src="images/ss_logo_blkbg.png" class="no-style-image" style="width: 360px;"/>
+          <blockquote>StackStarter.io/spin</blockquote>
+          <blockquote style="font-size: .8em">Spin Code: #trainingday</blockquote>
+          <aside class="notes">
               <ul>
                 <li>We will be going through alot of content!</li>
                 <li>A spin has been configured for your enjoyment!</li>
               </ul>
             </aside>
-				</section>
+        </section>
 
-				<section>
-					<section>
-						<h2>Let's talk Drupal...</h2>
-						<aside class="notes">
+        <section>
+          <section>
+            <h2>Let's talk Drupal...</h2>
+            <aside class="notes">
               <ul>
                 <li>Talk a bit about the history of Drupal.</li>
                 <li>Initial release 2001</li>
               </ul>
             </aside>
-					</section>
+          </section>
           <section>
             <h2>What is Drupal?</h2>
             <aside class="notes">
@@ -110,24 +162,24 @@
               </ul>
             </aside>
           </section>
-					<section>
-						<h2>Where have we come from?</h2>
-						<blockquote>Our many stages of evolution</blockquote>
-						<img src="http://i.giphy.com/EpB8oRhHSQcnu.gif"/>
-						<aside class="notes">
+          <section>
+            <h2>Where have we come from?</h2>
+            <blockquote>Our many stages of evolution</blockquote>
+            <img src="http://i.giphy.com/EpB8oRhHSQcnu.gif"/>
+            <aside class="notes">
               <ul>
                 <li>8 Major versions</li>
               </ul>
             </aside>
-					</section>
-					<section>
-						<h2>Where are we going?</h2>
-						<blockquote>A revolution is happening!</blockquote>
-						<img src="http://i.giphy.com/TM08ClADyrUC4.gif"/>
-					</section>
-					<section>
-						<h2>Who uses Drupal?</h2>
-					</section>
+          </section>
+          <section>
+            <h2>Where are we going?</h2>
+            <blockquote>A revolution is happening!</blockquote>
+            <img src="http://i.giphy.com/TM08ClADyrUC4.gif"/>
+          </section>
+          <section>
+            <h2>Who uses Drupal?</h2>
+          </section>
           <section>
             <h2>Memorial Sloan Kettering Cancer Center (MSK)</h2>
             <p>
@@ -142,12 +194,12 @@
           </section>
           <section>
             <h2>Many, Many, Many More</h2>
-            <p><a href="https://www.drupal.com/showcases">https://www.drupal.com/showcases</a></p>
+            <p><a href="https://www.drupal.org/case-studies/featured/all/drupal-8.x">drupal.org/case-studies/featured/all/drupal-8.x</a></p>
           </section>
-				</section>
+        </section>
 
-				<section>
-					<section>
+        <section>
+          <section>
              <h2>Lets step back...</h2>
              <p>Lets talk about the C in CMS</p>
              <aside class="notes">
@@ -174,7 +226,7 @@
               </ul>
             </aside>
           </section>
-				</section>
+        </section>
         <section>
           <section>
              <h2>Some terminology</h2>
@@ -513,41 +565,81 @@ class HelloBlock extends BlockBase {
           <p>Events are accessible by anyone.</p>
         </section>
 
+        <section>
+          <h2>Today we covered:</h2>
+          <ul>
+            <li>Items here...</li>
+          </ul>
+        </section>
+        <section>
+          <h4>Support Drupal & community events like this</h4>
+          <p><img src="images/association_membership.jpg" /></p>
+          <ul>
+            <li><a href="https://assoc.drupal.org/">https://assoc.drupal.org/</a></li>
+            <li>Learn about the Drupal Association's monthly newsletter</li>
+            <li>Follow them on <a href="https://twitter.com/DrupalAssoc">@DrupalAssoc</a></li>
+            <li>Attend an Open Board Meeting</li>
+          </ul>
+          <aside class="notes">
+            <p>The Drupal Association is dedicated to helping the open-source Drupal CMS project flourish. Learn more about what we do:
+            We help the Drupal community with funding, infrastructure, education, promotion, distribution and online collaboration at Drupal.org.
+
+            Funds to support these programs, and the Association staff come from memberships, supporting partners, sponsorships, donations, and
+            DrupalCon events. Join us to help ensure a creative and exciting future for Drupal!</p>
+          </aside>
+        </section>
+        <section>
+          <h4>Drupal Association Member Benefits</h4>
+          <p><img src="images/da_individual_logo.png" /></p>
+          <ul>
+            <li>Listed in public directories</li>
+            <li>Receive discounts from DA partners like <a href="http://www.oreilly.com/">O'Reilly</a>,
+              <a href="https://drupalwatchdog.com/">Drupal Watchdog</a>, and <a href="http://buildamodule.com/">BuildAModule</a>
+            </li>
+            <li>Membership Badge on your Drupal user profile</li>
+            <li>Receive the latest news on Drupal Association projects.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Thank you!</h2>
+          <p>Please share your feedback! <a href="https://www.surveymonkey.com/r/XWGNNPP">https://www.surveymonkey.com/r/XWGNNPP</a></p>
+        </section>
 			</div>
 		<footer class="sego-logo">
       <a href="http://www.segosolutions.net/"><img src="sego/sego_logo_blkbg.png" alt="Sego Solutions logo" height=50" /></a>
+      <a class="p2-logo" href="https://www.phase2technology.com/"><img src="images/p2_logo_reverse.png" alt="Phase2 Technology logo" height=50" /></a>
     </footer>
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
 
-		<script>
+    <script>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				// Parallax scrolling
-				//parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				//parallaxBackgroundSize: '2100px 900px',
+        // Parallax scrolling
+        //parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        //parallaxBackgroundSize: '2100px 900px',
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
 
-		</script>
+    </script>
 
-	</body>
+  </body>
 </html>
