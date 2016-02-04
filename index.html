@@ -71,9 +71,8 @@
 					<h2>A little about you.</h2>
 					<aside class="notes">
               <ul>
-                <li>Who is familar with OO concepts?</li>
-                <li>How many are familar with D7 module development</li>
-                <li>Who loves D7 development?</li>
+                <li>How many have experience with Drupal 7? 6?</li>
+                <li>From other environments? Ruby, Python, .NET</li>
                 <li>Who is excited about Drupal 8?</li>
               </ul>
             </aside>
@@ -234,14 +233,286 @@
               </ul>
             </aside>
           </section>
+          <section>
+             <h2>Modules</h2>
+             <div class="fragment" data-fragment-index="1">Finding Modules</div>
+             <div class="fragment" data-fragment-index="2">When to bring in a module</div>
+          </section>
+          <section>
+             <h2>Themes</h2>
+             <div class="fragment" data-fragment-index="1">Finding Themes</div>
+             <div class="fragment" data-fragment-index="2">Base themes</div>
+          </section>
         </section>
 
-				<section>
-					<section>
-						<h2>Lets dive in!</h2>
-						<img src="images/dive_in.gif"/>
-					</section>
-				</section>
+
+        <section>
+          <section>
+            <h2>Lets dive in!</h2>
+            <img src="images/dive_in.gif"/>
+             <aside class="notes">
+              <ul>
+                <li>Dive into the Drupal administrative interface</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Under the hood</h2>
+            <p>We can do alot with just core. Let's see how we can extend.</p>
+            <img src="http://i.giphy.com/7koi3g3jtjbtS.gif"/>
+          </section>
+          <section>
+            <h2>File Structure</h2>
+            <aside class="notes">
+              <ul>
+                <li>Where do modules live?</li>
+                <li>Where do themes live?</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h2>Settings.php and friends</h2>
+            <aside class="notes">
+              <ul>
+                <li>services.yml</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h2>Make our lives easier with Drush</h2>
+            <aside class="notes">
+              <ul>
+                <li>How many are confortable on the command line?</li>
+                <li>Download the Examples module</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h2>What about Drupal Console?</h2>
+            <aside class="notes">
+              <ul>
+                <li>Show some of the commands available.</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+            <h2>Stucture of a module</h2>
+            <div class="fragment" data-fragment-index="1">
+             <p>/modules/custom/hello/hello.info.yml</p>
+            <pre><code class="yaml" data-trim>
+name: Hello
+description: A friendly Drupal 8 module
+type: module
+core: 8.x
+            </code></pre>
+            <div class="fragment" data-fragment-index="2"><p>Modules now live in the /modules directory</p>
+            </div>
+            <div class="fragment" data-fragment-index="3">
+              <p>We don't need a .module file anymore!</p>
+            </div>
+          </div>
+          </section>
+        <section>
+          <section>
+            <h2>Lets make a Page...</h2>
+            <div class="fragment" data-fragment-index="1">
+              <p>Without hook_menu!</p>
+            </div>
+             <aside class="notes">
+              <ul>
+                <li>The Synfony Routing component is used for defining our routes</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+        /modules/custom/hello/src/Controller/HelloController.php
+            <pre><code class="php" data-trim>
+/**
+ * Our first Drupal 8 controller.
+ */
+namespace Drupal\hello\Controller;
+
+use Drupal\Core\Controller\ControllerBase;
+
+class HelloController extends ControllerBase {
+  public function sayHi() {
+
+    return array(
+        '#markup'=>"Why hello Drupal 8",
+      );
+  }
+}
+            </code></pre>
+          </section>
+          <section>
+            <p>/modules/custom/hello/hello.routing.yml</p>
+            <pre>
+              <code class="yaml" data-trim>
+              hello.sayHi:
+  path: '/hello'
+  defaults:
+    _controller: '\Drupal\hello\Controller\HelloController::sayHi'
+  requirements:
+    _permission: 'access content'
+
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>What about Forms?</h2>
+            <div class="fragment" data-fragment-index="1">
+              <p>Very similar pattern!</p>
+            </div>
+          </section>
+          <section>
+            <p>/modules/custom/hello/src/Form/HelloRequestForm.php</p>
+            <pre>
+              <code class="php" data-trim>
+/**
+ * @file
+ * Contains \Drupal\hello\Form\HelloRequestForm.
+ */
+
+namespace Drupal\hello\Form;
+
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\FormStateInterface;
+
+class HelloRequestForm extends FormBase {
+  /**
+   * {@inheritdoc}.
+   */
+  public function getFormId() {
+    return 'hello_request';
+  }
+
+  /**
+   * {@inheritdoc}.
+   */
+  public function buildForm(array $form, FormStateInterface $form_state) {
+    $form['phone_number'] = array(
+      '#type' => 'tel',
+      '#title' => $this->t('Your phone number')
+    );
+    $form['actions']['#type'] = 'actions';
+    $form['actions']['submit'] = array(
+      '#type' => 'submit',
+      '#value' => $this->t('Give me a call'),
+      '#button_type' => 'primary',
+    );
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    if (strlen($form_state->getValue('phone_number')) < 3) {
+      $form_state->setErrorByName('phone_number', $this->t('The phone number is too short. Please enter a full phone number.'));
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    drupal_set_message($this->t('Your phone number is @number', array('@number' => $form_state->getValue('phone_number'))));
+  }
+}
+
+              </code>
+            </pre>
+          </section>
+          <section>
+            <p>/modules/custom/hello/hello.routing.yml</p>
+              <pre>
+              <code class="yaml" data-trim>
+              hello.requestHi:
+  path: '/hello/request'
+  defaults:
+    _form: '\Drupal\hello\Form\HelloRequestForm'
+  requirements:
+    _permission: 'access content'
+              </code>
+            </pre>
+          </section>
+           <section>
+          <h2>Lets make a Block!</h2>
+          <div class="fragment" data-fragment-index="1">
+              <p>Without hook_block_info and hook_block_view!</p>
+          </div>
+        </section>
+        <section>
+          <p>/modules/custom/hello/src/Plugin/Block/HelloBlock.php</p>
+            <pre>
+              <code class="php" data-trim>
+namespace Drupal\hello\Plugin\Block;
+
+use Drupal\Core\Block\BlockBase;
+
+/**
+ * Provides a 'Hello' block.
+ *
+ * @Block(
+ *   id = "hello_block",
+ *   admin_label = @Translation("Hello block"),
+ * )
+ */
+class HelloBlock extends BlockBase {
+  public function build() {
+    return array(
+      '#markup' => $this->t("This is a an awesome block!"),
+    );
+  }
+}
+
+              </code>
+            </pre>
+        </section>
+        </section>
+        <section>
+          <section>
+            <h2>How about themes?</h2>
+            <div class="fragment" data-fragment-index="1">
+              <p>Similar strucuture to modules.</p>
+            </div>
+          </section>
+          <section>
+            <h2>Let's download some, and explore</h2>
+            <aside class="notes">
+              <ul>
+                <li>Bootstrap, Foundation, Neato</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <h1>Ok, we are experts. Lets build!</h1>
+        </section>
+        <section>
+          <p>Let's build a site together, your client is a large educational institution and they require a small departmental site that will enable the following set of functionality</p>
+        </section>
+        <section>
+          <p>Manage users in two different roles:</p>
+          <ul>
+            <li>Staff</li>
+            <li>Student</li>
+          </ul>
+          <p>Ability to create and share events on an event page.<p>
+          <p>Events can be any of the various different types:</p>
+          <ul>
+            <li>Student Events</li>
+            <li>Faculty Events</li>
+            <li>Community Events</li>
+          </ul>
+          <p>Events are accessible by anyone.</p>
+        </section>
+
 			</div>
 		<footer class="sego-logo">
       <a href="http://www.segosolutions.net/"><img src="sego/sego_logo_blkbg.png" alt="Sego Solutions logo" height=50" /></a>
