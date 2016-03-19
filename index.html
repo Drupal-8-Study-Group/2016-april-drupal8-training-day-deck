@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/black.css" id="theme">
     <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="sego/sego_style.css">
+    <link rel="stylesheet" href="training/training_style.css">
 
 
     <!-- Code syntax highlighting -->
@@ -49,18 +49,21 @@
 
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
+
+        <!-- Title Slide -->
         <section>
-          <h1>Exploring Drupal 8</h1>
-          <h5>Long Island</h5>
+          <h1>Exploring D8 Development</h1>
           <img class="no-style-image" style= "width: 160px;" src="images/d8_logo.png"/>
           <h6>Training Day</h6>
           <p>
-            <small><a href="http://www.segosolutions.com">Nick Selvaggio</a></small> |
-            <small><a href="#">Rich von Rauchhaupt</a> </small> |
-            <small><a href="#">Mai Irie</a></small>
+            <small><a href="http://www.segosolutions.com">Nick Selvaggio</a> | </small>
+            <small><a href="https://blog.dosomething.org/author/mholford/">Matt Holford</a> | </small>
+            <small><a href="https://www.linkedin.com/in/rebecca-bronheim-00032664">Rebecca Bronheim</a> | </small>
+            <small><a href="http://www.maiirie.com">Mai Irie</a></small>
           </p>
         </section>
 
+        <!-- Introduction -->
         <section>
           <section>
             <h2>A little about us.</h2>
@@ -69,40 +72,73 @@
           <!-- About Nick slide -->
           <section>
             <p>
-              <img class="photo" src="images/nick.png" />
+              <img class="photo" src="images/trainer_pics/nick.png" />
             </p>
             <p>Hi! I'm Nick. <br /> I'm a Managing Partner @<br />
-              <img class="clean" src="sego/sego_logo_blkbg.png" alt="Stony Brook Logo" height="50" border="0" />
+              <img class="clean" src="images/logos/sego_logo_blkbg.png" alt="Stony Brook Logo" height="50" border="0" />
             </p>
           </section>
 
-          <!-- About Rich slide -->
+          <!-- About Matt slide -->
           <section>
             <p>
-              <img class="photo" src="images/rich.jpg" />
+              <img class="photo" src="images/trainer_pics/matt.jpeg" height="250"/>
             </p>
-            <p>Hi! I'm Rich. <br />I'm a Web Platform Strategist & Architect @ <br />
-              <img class="clean" src="images/sbulogo.png" alt="Stony Brook Logo" height="50" border="0" />
+            <p>Hi! I'm Matt. <br />I'm the CTO at Do Something @ <br />
+              <img class="clean" src="images/logos/dosomething_logo.svg" alt="DoSomething.org Logo" height="50" border="0" />
+            </p>
+          </section>
+
+          <!-- About Rebecca slide -->
+          <section>
+            <p>
+              <img class="photo" src="images/trainer_pics/rebecca.jpg" />
+            </p>
+            <p>Hi! I'm Rebecca. <br />I'm an Account Manager for Digital & Creative Services @ <br />
+              <img class="clean" src="images/logos/TEKsystems_logotype_RGB%20png.png" alt="TEKsystems Logo" height="50" border="0" />
             </p>
           </section>
 
           <!-- About Mai slide -->
           <section>
             <p>
-              <img class="photo" src="images/mirie.png" />
+              <img class="photo" src="images/trainer_pics/mirie.png" />
             </p>
             <p>Hi! I'm Mai. I'm a senior developer @ <br />
-              <img class="clean" src="images/p2_logo_reverse.png" />
+              <img class="clean" src="images/logos/p2_logo_reverse.png" />
             </p>
           </section>
         </section>
 
+        <!-- Thank yous! -->
         <section>
-          <h2>About LIDUG</h2>
-          <p>Join the local community!</p>
+          <h2>Thank you to Do Something for Hosting!</h2>
+          <img class="clean" src="images/logos/dosomething_logo.svg" alt="DoSomething.org Logo" height="150px" border="0" />
           <aside class="notes">
             <ul>
-              <li>We meet every 3rd Wedsnday of the month @ LaunchPad Huntington</li>
+              <li>Ask Matt to talk about DoSomething.org</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Thank you to TEKsystems for food and beverages!</h2>
+          <img class="clean" src="images/logos/TEKsystems_logotype_RGB%20png.png" alt="TEKsystems Logo" border="0" />
+          <aside class="notes">
+            <ul>
+              <li>Ask Rebecca to talk about TEKsystems</li>
+            </ul>
+          </aside>
+        </section>
+
+        <!-- Community and Resources -->
+        <section>
+          <h2>About Drupal NYC</h2>
+          <p>Join the local community!</p>
+          <p>Next Meetup is Wed, May 4th</p>
+          <aside class="notes">
+            <ul>
+              <li>We meet the 1st Wednesday of the month @ 30 Rock</li>
             </ul>
           </aside>
         </section>
@@ -110,7 +146,7 @@
         <section>
           <h2>Try Drupal</h2>
           <p><a href="http://www.trydrupal8.com">TryDrupal8.com</a></p>
-          <p>Our podcast series: <a href="http://www.talkingdrupal.com/">Talking Drupal Podcast</a></p>
+          <p>Also there's a great podcast series: <a href="http://www.talkingdrupal.com/">Talking Drupal Podcast</a></p>
           <aside class="notes">
             <ul>
               <li>Try Drupal platform</li>
@@ -119,46 +155,50 @@
           </aside>
         </section>
 
+        <!-- About Attendees -->
         <section data-transition="linear" data-background="#527c97" data-background-transition="slide">
           <h2>A little about you.</h2>
           <aside class="notes">
               <ul>
                 <li>How many have experience with Drupal 7? 6?</li>
                 <li>From other environments? Ruby, Python, .NET</li>
-                <li>Who is excited about Drupal 8?</li>
+                <li>Who has tried to develop a module or a theme for D8 already?</li>
               </ul>
             </aside>
         </section>
 
+        <!-- Agenda -->
         <section>
-          <h2>Play Along!</h2>
-          <img src="images/ss_logo_blkbg.png" class="no-style-image" style="width: 360px;"/>
-          <blockquote>StackStarter.io/spin</blockquote>
-          <blockquote style="font-size: .8em">Spin Code: #trainingday</blockquote>
+          <h2>What are we doing today?</h2>
+          <ul>
+            <li>Quick Overview of D8 Landscape</li>
+            <li>Tips on Tools</li>
+            <li>Pair up and setup!</li>
+            <li>Break for lunch @ 12:30 (provided by TEKsystems)</li>
+            <li>Create a module with Block with a simple visibility rule (thanks @tedbow!)</li>
+          </ul>
           <aside class="notes">
-              <ul>
-                <li>We will be going through alot of content!</li>
-                <li>A spin has been configured for your enjoyment!</li>
-              </ul>
-            </aside>
+            <ul>
+              <li>We will be going through a lot of content!</li>
+              <li>You will be pair programming today</li>
+              <li>Today's goal is for you to walk away knowing how to create a module, implement a plugin (Block), create a form (block config), and add a visibility rule.</li>
+              <li>Finally you will place your block and enjoy the glory of your accomplishment!</li>
+              <li>If we have time, then we'll lightly cover testing.</li>
+              <li>A spin has been configured for your enjoyment!</li>
+            </ul>
+          </aside>
         </section>
 
+        <!-- Part 1: Quick Overview of D8 Landscape -->
         <section>
+
+          <!-- History -->
           <section>
-            <h2>Let's talk Drupal...</h2>
+            <h2>Let's talk about Drupal 8</h2>
             <aside class="notes">
               <ul>
                 <li>Talk a bit about the history of Drupal.</li>
                 <li>Initial release 2001</li>
-              </ul>
-            </aside>
-          </section>
-          <section>
-            <h2>What is Drupal?</h2>
-            <aside class="notes">
-              <ul>
-                <li>Modular CMS</li>
-                <li>More then a CMS.</li>
               </ul>
             </aside>
           </section>
@@ -172,142 +212,80 @@
               </ul>
             </aside>
           </section>
+
           <section>
-            <h2>Where are we going?</h2>
-            <blockquote>A revolution is happening!</blockquote>
-            <img src="http://i.giphy.com/TM08ClADyrUC4.gif"/>
+            <h2>Who using Drupal 8 now?</h2>
           </section>
-          <section>
-            <h2>Who uses Drupal?</h2>
-          </section>
+
           <section>
             <h2>Memorial Sloan Kettering Cancer Center (MSK)</h2>
             <p>
-              One of the largest cancer centers in the United States, launched the new <a href="mskcc.org">mskcc.org </a> in May. It chose Drupal 8, even when the software was still in its beta phase, to help extend the reach of its "More Science. Less Fear" campaign.
+              One of the largest cancer centers in the United States, launched the new <a href="https://www.mskcc.org/">mskcc.org </a> in May. It chose Drupal 8, even when the software was still in its beta phase, to help extend the reach of its "More Science. Less Fear" campaign.
             </p>
           </section>
+
+          <section>
+            <h2>Johnson & Johnson</h2>
+            <p>
+              Partnered with IBM, Apple and Medtronic to launch ____ (get from Jeff), personal concierge service to prepare patients for knee surgery and to help them deal with its after effects.
+            </p>
+          </section>
+
           <section>
             <h2>CH2M</h2>
             <p>
               <a href="http://www.ch2m.com/">CH2M</a> is a global corporation that works to keep governments, infrastructure, and environments sustainable. It uses Drupal 8 to present and prove its capabilities.
             </p>
           </section>
+
           <section>
             <h2>Many, Many, Many More</h2>
             <p><a href="https://www.drupal.org/case-studies/featured/all/drupal-8.x">drupal.org/case-studies/featured/all/drupal-8.x</a></p>
           </section>
+
+          <!-- What's different about developing for D8 -->
+          <section>
+            <h2>What's changed?</h2>
+            <ul>
+              <li>PHP 5.5 Required!</li>
+              <li>Symfony2 Framework and Object-oriented programming</li>
+              <li>Goodbye hooks (for the most part) & Hello Plugins + YAML configuration files</li>
+              <li>Configuration and Bundle Entities</li>
+              <li>Better Test Framework</li>
+              <li>Caching</li>
+              <li>Composer</li>
+              <li>Different directory structure</li>
+              <li>Twig and SMACSS standard, and Stable and Classy core base themes</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>D8 uses partial page caching and cache tags. Twig templates get compiled and cached.</li>
+                <li>Kernel, Unit Tests, no more terrible SimpleTests</li>
+                <li>Core is in a directory core; your modules and themes go into the modules and themes directories in the project root.</li>
+              </ul>
+            </aside>
+          </section>
         </section>
 
+        <!-- Tips on Tools -->
         <section>
           <section>
-             <h2>Lets step back...</h2>
-             <p>Lets talk about the C in CMS</p>
+             <h2>Tips on Tools</h2>
+             <ul>
+               <li>You will need a robust IDE (PHPStorm, Eclipse, Netbeans)</li>
+               <li>Install and setup <a href="https://xdebug.org/">XDebug</a> with your IDE</li>
+               <li><a href="https://github.com/drush-ops/drush</li>">Drush 7</a></li>
+               <li><a href="https://drupalconsole.com/">Drupal Console</a></li>
+               <li>Get acquainted with the Web Profiler module packaged with <a href="https://www.drupal.org/project/devel">Devel</a></li>
+               <li>Handy D8 Module Status list page: <a href="http://d8status.md-systems.ch/">http://d8status.md-systems.ch/</a></li>
+               <li>The Examples project: https://www.drupal.org/project/examples</li>
+             </ul>
              <aside class="notes">
               <ul>
-                <li>Lay the ground work to introduce core terminology</li>
+                <li>The importance of an IDE goes hand in hand with D8's shift to OOP. You will be extending classes provided by Drupal core when developing modules. An IDE will be able to tell when you are doing this incorrectly and let you know what you will need to do to correct it.</li>
+                <li>The Drupal Console is a CLI tool to generate boilerplate code, interact and debug Drupal 8.</li>
               </ul>
             </aside>
-          </section>
-          <section>
-             <h2>Content First</h2>
-             <aside class="notes">
-              <ul>
-                <li>Think about our content first.</li>
-                <li>Decontruct what the content we are wanting to manage in order to structure it.</li>
-              </ul>
-            </aside>
-          </section>
-          <section>
-             <h2>Structuring our content</h2>
-             <aside class="notes">
-              <ul>
-                <li>Unstuctured vs Structured Content</li>
-                <li>Reusing content in different channels</li>
-              </ul>
-            </aside>
-          </section>
-          <section>
-             <h2>What makes Drupal unique?</h2>
-             <aside class="notes">
-              <ul>
-                <li>Structured Content</li>
-              </ul>
-            </aside>
-          </section>
-        </section>
-        <section>
-          <section>
-             <h2>Some terminology</h2>
-             <img src="http://i.giphy.com/DjtjxCB1SEDtu.gif"/>
-             <aside class="notes">
-              <ul>
-                <li>Unstuctured vs Structured Content</li>
-                <li>Reusing content in different channels</li>
-              </ul>
-            </aside>
-          </section>
-          <section>
-             <h2>Entities</h2>
-             <div class="fragment" data-fragment-index="1">Nodes</div>
-             <div class="fragment" data-fragment-index="2">Taxonomy</div>
-             <div class="fragment" data-fragment-index="3">Users</div>
-             <div class="fragment" data-fragment-index="4">Comments</div>
-             <div class="fragment" data-fragment-index="5">...</div>
-             <aside class="notes">
-              <ul>
-                <li>You are define your own.</li>
-                <li>Growing number of CORE entities (ex. Blocks)</li>
-              </ul>
-            </aside>
-          </section>
-          <section>
-             <h2>Fields</h2>
-             <div class="fragment" data-fragment-index="1">Text</div>
-             <div class="fragment" data-fragment-index="2">Numbers</div>
-             <div class="fragment" data-fragment-index="3">Select Lists</div>
-             <div class="fragment" data-fragment-index="5">...</div>
-            <aside class="notes">
-              <ul>
-                <li>You are define your own.</li>
-                <li>Growing number of CORE entities (ex. Tel, Email)</li>
-              </ul>
-            </aside>
-          </section>
-          <section>
-             <h2>Fields can be "bundled" with Entities</h2>
-             <div class="fragment" data-fragment-index="1">Nodes -> Content Types</div>
-             <div class="fragment" data-fragment-index="2">Taxonomy -> Vocabularies</div>
-            <aside class="notes">
-              <ul>
-                <li>"Fieldable" entities</li>
-              </ul>
-            </aside>
-          </section>
-          <section>
-             <h2>Views</h2>
-             <div class="fragment" data-fragment-index="1">Define Lists of Content</div>
-             <div class="fragment" data-fragment-index="2">Define how to output the given list</div>
-            <aside class="notes">
-              <ul>
-                <li>Visual SQL builder</li>
-              </ul>
-            </aside>
-          </section>
-          <section>
-             <h2>Modules</h2>
-             <div class="fragment" data-fragment-index="1">Finding Modules</div>
-             <div class="fragment" data-fragment-index="2">When to bring in a module</div>
-          </section>
-          <section>
-             <h2>Themes</h2>
-             <div class="fragment" data-fragment-index="1">Finding Themes</div>
-             <div class="fragment" data-fragment-index="2">Base themes</div>
-          </section>
-          <section>
-             <h2>Regions</h2>
-          </section>
-           <section>
-             <h2>Blocks</h2>
           </section>
         </section>
 
@@ -318,10 +296,23 @@
             <img src="images/dive_in.gif"/>
              <aside class="notes">
               <ul>
-                <li>Dive into the Drupal administrative interface</li>
+                <li>It's time to pair up and set up!</li>
               </ul>
             </aside>
           </section>
+        </section>
+
+        <section>
+          <h2>Play Along!</h2>
+          <img src="images/logos/ss_logo_blkbg.png" class="no-style-image" style="width: 360px;"/>
+          <blockquote>StackStarter.io/spin</blockquote>
+          <blockquote style="font-size: .8em">Spin Code: #trainingday</blockquote>
+          <aside class="notes">
+            <ul>
+              <li>We will be going through alot of content!</li>
+              <li>A spin has been configured for your enjoyment!</li>
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -630,10 +621,10 @@ class HelloBlock extends BlockBase {
 			</div>
 		<footer class="sego-logo">
 
-      <a class="p2-logo" href="http://www.segosolutions.net/"><img src="sego/sego_logo_blkbg.png" alt="Sego Solutions logo" height="50" /></a>
-      <a class="p2-logo" href="https://www.phase2technology.com/"><img src="images/p2_logo_reverse.png" alt="Phase2 Technology logo" height="50" /></a>
-
-       <a class="p2-logo" href="http://www.stonybrook.edu/"><img src="images/sbulogo.png" alt="Stony Brook Logo" height="50" /></a>
+      <a class="logo" href="http://www.segosolutions.net/"><img src="images/logos/sego_logo_blkbg.png" alt="Sego Solutions logo" height="50" /></a>
+      <a class="logo" href="https://www.phase2technology.com/"><img src="images/logos/p2_logo_reverse.png" alt="Phase2 Technology logo" height="50" /></a>
+      <a class="logo" href="https://www.dosomething.org/"><img src="images/logos/dosomething_logo.svg" alt="DoSomething.org logo" height="50" /></a>
+      <a class="logo" href="https://www.teksystems.com/"><img src="images/logos/TEKsystems_logotype_RGB%20png.png" alt="TEKsystems logo" height="50" /></a>
 
     </footer>
     <script src="lib/js/head.min.js"></script>
