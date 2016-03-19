@@ -1,5 +1,5 @@
 /**
- Sego Presentation Styling
+ Additional styles for the Training Day Slides.
 **/
 .sego-logo {
   position: absolute;
@@ -27,7 +27,7 @@
     font-family: 'Source Sans Pro', Helvetica, sans-serif;
     font-size: 1.7em; }
 
-.reveal a.p2-logo {
+.reveal a.logo {
   margin-left: 25px; }
 
 .reveal section img.clean {
@@ -35,5 +35,4 @@
   border: none;
   box-shadow: none; }
 
-.mai.photo {
-  width: 25%; }
+/*# sourceMappingURL=training_style.css.map */
