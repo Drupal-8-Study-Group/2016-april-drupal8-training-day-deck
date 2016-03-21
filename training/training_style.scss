@@ -3,6 +3,7 @@
 **/
 
 $ss_blue: #527c97;
+$highlight_color: #ff5500; // Bright orange.
 
 .sego-logo {
    position: absolute;
@@ -48,6 +49,6 @@ $ss_blue: #527c97;
   box-shadow: none;
 }
 
-//.mai.photo {
-//  width: 25%;
-//}
+.reveal .highlight {
+  color: $highlight_color;
+}
