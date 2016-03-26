@@ -34,6 +34,8 @@
   background: transparent;
   border: none;
   box-shadow: none; }
+  .reveal section img.clean.horizontal {
+    padding: 0 1em; }
 
 .reveal .highlight {
   color: #ff5500; }
