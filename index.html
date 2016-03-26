@@ -84,7 +84,7 @@
             <p>
               <img class="photo" src="images/trainer_pics/matt.jpeg" height="250"/>
             </p>
-            <p>Hi! I'm Matt. <br />I'm the CTO at Do Something @ <br />
+            <p>Hi! I'm Matt. <br />I'm the CTO @ <br />
               <img class="clean" src="images/logos/dosomething_logo.svg" alt="DoSomething.org Logo" height="50" border="0" />
             </p>
           </section>
@@ -175,16 +175,15 @@
             <li>Tips on Tools</li>
             <li>Pair up and setup!</li>
             <li>Break for lunch @ 12:30 (provided by TEKsystems)</li>
-            <li>Create a module with Block with a simple visibility rule (thanks @tedbow!)</li>
+            <li>Create a module with a custom block and more! (thanks @tedbow for <a href="https://www.drupal.org/project/role_notices">role_notices</a> module!)</li>
           </ul>
           <aside class="notes">
             <ul>
               <li>We will be going through a lot of content!</li>
               <li>You will be pair programming today</li>
-              <li>Today's goal is for you to walk away knowing how to create a module, implement a plugin (Block), create a form (block config), and add a visibility rule.</li>
-              <li>Finally you will place your block and enjoy the glory of your accomplishment!</li>
+              <li>Today's goal is for you to walk away knowing how to create a module, implement a plugin (Block), create a form (block config), and more!</li>
               <li>If we have time, then we'll lightly cover testing.</li>
-              <li>A spin has been configured for your enjoyment!</li>
+              <li>A spin environment has been configured for your enjoyment! (we'll get to that later)</li>
             </ul>
           </aside>
         </section>
@@ -230,7 +229,7 @@
               Partnered with IBM, Apple and Medtronic to launch <a href="http://careadvantage.jnj.com/">Care Advantage</a>, a personal concierge service to prepare patients for knee surgery and to help them deal with its after effects.
             </p>
             <aside class="notes">
-              <p>This site is actually two sites, one with a front end and one that's headless and one that's used as the backend to a mobile app.</p>
+              <p>This site is actually two sites, one with a front end and one that's headless (used as the backend to a mobile app).</p>
               <p>Using IBM's Watson!</p>
             </aside>
           </section>
@@ -253,19 +252,19 @@
             <ul>
               <li>PHP 5.5 Required!</li>
               <li>Symfony2 Framework and Object-oriented programming</li>
-              <li>Goodbye hooks (for the most part) & Hello Plugins + YAML configuration files</li>
+              <li>Goodbye hooks (for the most part) & Hello Routes, Plugins, Services, and Events</li>
               <li>Configuration and Bundle Entities</li>
               <li>Better Test Framework</li>
               <li>Caching</li>
               <li>Composer</li>
               <li>Different directory structure</li>
-              <li>Twig and SMACSS standard, and Stable and Classy core base themes</li>
+              <li>Twig and SMACSS & BEM standards, and Stable and Classy core base themes</li>
             </ul>
             <aside class="notes">
               <ul>
                 <li>D8 uses partial page caching and cache tags. Twig templates get compiled and cached.</li>
-                <li>Kernel, Unit Tests, no more terrible SimpleTests</li>
-                <li>Core is in a directory core; your modules and themes go into the modules and themes directories in the project root.</li>
+                <li>Kernel replaces SimpleTests, Unit Tests</li>
+                <li>Core is in the directory "core"; your modules and themes go into the modules and themes directories in the project root.</li>
               </ul>
             </aside>
           </section>
@@ -373,232 +372,30 @@
         </section>
 
 
-        <!-- Structure of a module -->
+        <!-- Switch to github readme file for tutorial. -->
         <section>
-            <h2>Stucture of a module</h2>
-            <div class="fragment" data-fragment-index="1">
-             <p>/modules/custom/hello/hello.info.yml</p>
-            <pre><code class="yaml" data-trim>
-name: Hello
-description: A friendly Drupal 8 module
-type: module
-core: 8.x
-            </code></pre>
-            <div class="fragment" data-fragment-index="2"><p>Modules now live in the /modules directory</p>
-            </div>
-            <div class="fragment" data-fragment-index="3">
-              <p>We don't need a .module file anymore!</p>
-            </div>
-          </div>
-          </section>
-        <section>
-          <section>
-            <h2>Lets make a Page...</h2>
-            <div class="fragment" data-fragment-index="1">
-              <p>Without hook_menu!</p>
-            </div>
-             <aside class="notes">
-              <ul>
-                <li>The Synfony Routing component is used for defining our routes</li>
-              </ul>
-            </aside>
-          </section>
-          <section>
-        /modules/custom/hello/src/Controller/HelloController.php
-            <pre><code class="php" data-trim>
-/**
- * Our first Drupal 8 controller.
- */
-namespace Drupal\hello\Controller;
-
-use Drupal\Core\Controller\ControllerBase;
-
-class HelloController extends ControllerBase {
-  public function sayHi() {
-
-    return array(
-        '#markup'=>"Why hello Drupal 8",
-      );
-  }
-}
-            </code></pre>
-          </section>
-          <section>
-            <p>/modules/custom/hello/hello.routing.yml</p>
-            <pre>
-              <code class="yaml" data-trim>
-              hello.sayHi:
-  path: '/hello'
-  defaults:
-    _controller: '\Drupal\hello\Controller\HelloController::sayHi'
-  requirements:
-    _permission: 'access content'
-
-              </code>
-            </pre>
-          </section>
-          <section>
-            <h2>What about Forms?</h2>
-            <div class="fragment" data-fragment-index="1">
-              <p>Very similar pattern!</p>
-            </div>
-          </section>
-          <section>
-            <p>/modules/custom/hello/src/Form/HelloRequestForm.php</p>
-            <pre>
-              <code class="php" data-trim>
-/**
- * @file
- * Contains \Drupal\hello\Form\HelloRequestForm.
- */
-
-namespace Drupal\hello\Form;
-
-use Drupal\Core\Form\FormBase;
-use Drupal\Core\Form\FormStateInterface;
-
-class HelloRequestForm extends FormBase {
-  /**
-   * {@inheritdoc}.
-   */
-  public function getFormId() {
-    return 'hello_request';
-  }
-
-  /**
-   * {@inheritdoc}.
-   */
-  public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['phone_number'] = array(
-      '#type' => 'tel',
-      '#title' => $this->t('Your phone number')
-    );
-    $form['actions']['#type'] = 'actions';
-    $form['actions']['submit'] = array(
-      '#type' => 'submit',
-      '#value' => $this->t('Give me a call'),
-      '#button_type' => 'primary',
-    );
-    return $form;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
-    if (strlen($form_state->getValue('phone_number')) < 3) {
-      $form_state->setErrorByName('phone_number', $this->t('The phone number is too short. Please enter a full phone number.'));
-    }
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
-    drupal_set_message($this->t('Your phone number is @number', array('@number' => $form_state->getValue('phone_number'))));
-  }
-}
-
-              </code>
-            </pre>
-          </section>
-          <section>
-            <p>/modules/custom/hello/hello.routing.yml</p>
-              <pre>
-              <code class="yaml" data-trim>
-              hello.requestHi:
-  path: '/hello/request'
-  defaults:
-    _form: '\Drupal\hello\Form\HelloRequestForm'
-  requirements:
-    _permission: 'access content'
-              </code>
-            </pre>
-          </section>
-           <section>
-          <h2>Lets make a Block!</h2>
-          <div class="fragment" data-fragment-index="1">
-              <p>Without hook_block_info and hook_block_view!</p>
-          </div>
-        </section>
-        <section>
-          <p>/modules/custom/hello/src/Plugin/Block/HelloBlock.php</p>
-            <pre>
-              <code class="php" data-trim>
-namespace Drupal\hello\Plugin\Block;
-
-use Drupal\Core\Block\BlockBase;
-
-/**
- * Provides a 'Hello' block.
- *
- * @Block(
- *   id = "hello_block",
- *   admin_label = @Translation("Hello block"),
- * )
- */
-class HelloBlock extends BlockBase {
-  public function build() {
-    return array(
-      '#markup' => $this->t("This is a an awesome block!"),
-    );
-  }
-}
-
-              </code>
-            </pre>
-        </section>
-        </section>
-        <section>
-          <section>
-            <h2>How about themes?</h2>
-            <div class="fragment" data-fragment-index="1">
-              <p>Similar strucuture to modules.</p>
-            </div>
-          </section>
-          <section>
-            <h2>Let's download some, and explore</h2>
-            <aside class="notes">
-              <ul>
-                <li>Bootstrap, Foundation, Neato</li>
-              </ul>
-            </aside>
-          </section>
-        </section>
-        <section>
-          <h1>Ok, we are experts. Lets build!</h1>
-        </section>
-        <section>
-          <p>Let's build a site together, your client is a large educational institution and they require a small departmental site that will enable the following set of functionality</p>
-        </section>
-        <section>
-          <p>Manage users in two different roles:</p>
-          <ul>
-            <li>Staff</li>
-            <li>Student</li>
-          </ul>
-          <p>Ability to create and share events on an event page.<p>
-          <p>Events can be any of the various different types:</p>
-          <ul>
-            <li>Student Events</li>
-            <li>Faculty Events</li>
-            <li>Community Events</li>
-          </ul>
-          <p>Events are accessible by anyone.</p>
+            <h2>Let's build our first module together!</h2>
+             <p>Go to: <a href="#">NYC Drupal Training page url goes here</a></p>
         </section>
 
+        <!-- Wrap up slide -->
         <section>
           <h2>Today we covered:</h2>
           <ul>
-            <li>Provided an overview of our active local community</li>
             <li>Learned about the history of Drupal</li>
-            <li>What makes Drupal a unique and powerful CMS.</li>
-            <li>Reviewed the core concepts of a Drupal site</li>
-            <li>Took a tour of the Drupal 8 interface</li>
-            <li>Dove deeper into the internals of Drupal 8</li>
-            <li>Built a basic site using some of the topics covered</li>
+            <li>Reviewed some helpful tools for D8 Development</li>
+            <li>Took a look at Drupal 8 project structure</li>
+            <li>Learned about YAML, Routing, Controllers, Plugins, Services, & OOP in Drupal</li>
+            <li>Created our first module!</li>
           </ul>
         </section>
+
+        <!-- Drupal Association -->
+        <section>
+          <!-- DA Video -->
+          <iframe width="853" height="480" src="https://www.youtube.com/embed/LZWqFSMul84" frameborder="0" allowfullscreen></iframe>
+        </section>
+
         <section>
           <h4>Support Drupal & community events like this</h4>
           <p><img src="images/association_membership.jpg" /></p>
@@ -616,6 +413,7 @@ class HelloBlock extends BlockBase {
             DrupalCon events. Join us to help ensure a creative and exciting future for Drupal!</p>
           </aside>
         </section>
+
         <section>
           <h4>Drupal Association Member Benefits</h4>
           <p><img src="images/da_individual_logo.png" /></p>
@@ -628,9 +426,22 @@ class HelloBlock extends BlockBase {
             <li>Receive the latest news on Drupal Association projects.</li>
           </ul>
         </section>
+
         <section>
-          <h2>Thank you!</h2>
-          <p>Please share your feedback! <a href="https://www.surveymonkey.com/r/XWGNNPP">https://www.surveymonkey.com/r/XWGNNPP</a></p>
+          <h2>Please fill out this survey!</h2>
+          <p><a href="https://assoc.drupal.org/global-training-days-survey-attendees">https://goo.gl/o8rZe4</a></p>
+        </section>
+
+
+        <section>
+          <h2>Thanks again to:</h2>
+          <p>
+            <img class="clean horizontal" src="images/logos/dosomething_logo.svg" alt="DoSomething.org logo" height="50" />
+            <img class="clean horizontal" src="images/logos/TEKsystems_logotype_RGB%20png.png" alt="TEKsystems logo" height="50" />
+            <img class="clean horizontal" src="images/logos/sego_logo_blkbg.png" alt="Sego Solutions logo" height="50" />
+          </p>
+
+          <h4>Survey: <a href="https://assoc.drupal.org/global-training-days-survey-attendees">https://goo.gl/o8rZe4</a></h4>
         </section>
 			</div>
 		<footer class="sego-logo">

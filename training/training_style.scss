@@ -47,6 +47,10 @@ $highlight_color: #ff5500; // Bright orange.
   background: transparent;
   border: none;
   box-shadow: none;
+
+  &.horizontal {
+    padding: 0 1em;
+  }
 }
 
 .reveal .highlight {
