@@ -6,6 +6,7 @@
 		<title>Exploring Drupal 8 - Training Day</title>
     <meta name="description" content="An introduction to Drupal 8.">
     <meta name="author" content="Nick Selvaggio">
+    <meta name="author" content="Mai Irie">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -57,9 +58,12 @@
           <h6>Training Day</h6>
           <p>
             <small><a href="http://www.segosolutions.com">Nick Selvaggio</a> | </small>
+            <small><a href="http://www.maiirie.com">Mai Irie</a> | </small>
+            <small><a href="https://www.linkedin.com/in/nicoledanielledamico">Nicole D'Amico</a> | </small>
+            <small><a href="https://www.drupal.org/u/holingpoon">Ho-Ling Poon</a> | </small>
             <small><a href="https://blog.dosomething.org/author/mholford/">Matt Holford</a> | </small>
             <small><a href="https://www.linkedin.com/in/rebecca-bronheim-00032664">Rebecca Bronheim</a> | </small>
-            <small><a href="http://www.maiirie.com">Mai Irie</a></small>
+
           </p>
         </section>
 
@@ -79,13 +83,33 @@
             </p>
           </section>
 
+          <!-- About Mai slide -->
+          <section>
+            <p>
+              <img class="photo" src="images/trainer_pics/mirie.png" />
+            </p>
+            <p>Hi! I'm Mai. I'm a senior developer @ <br />
+              <img class="clean" src="images/logos/p2_logo_reverse.png" />
+            </p>
+          </section>
+
+          <!-- About Ho-Ling slide -->
+          <section>
+            <p>
+              <img class="photo" src="images/trainer_pics/holing.jpg"/>
+            </p>
+            <p>Hi! I'm Ho-Ling. I'm an Applications Developer @ <br />
+              <img class="clean" src="images/logos/NYPL-logo-black-pos.png" height="150" />
+            </p>
+          </section>
+
           <!-- About Matt slide -->
           <section>
             <p>
               <img class="photo" src="images/trainer_pics/matt.jpeg" height="250"/>
             </p>
             <p>Hi! I'm Matt. <br />I'm the CTO @ <br />
-              <img class="clean" src="images/logos/dosomething_logo.svg" alt="DoSomething.org Logo" height="50" border="0" />
+              <img class="clean" src="images/logos/dosomething_logo.svg" alt="DoSomething.org Logo" height="125" border="0" />
             </p>
           </section>
 
@@ -98,17 +122,8 @@
               <img class="clean" src="images/logos/TEKsystems_logotype_RGB%20png.png" alt="TEKsystems Logo" height="50" border="0" />
             </p>
           </section>
-
-          <!-- About Mai slide -->
-          <section>
-            <p>
-              <img class="photo" src="images/trainer_pics/mirie.png" />
-            </p>
-            <p>Hi! I'm Mai. I'm a senior developer @ <br />
-              <img class="clean" src="images/logos/p2_logo_reverse.png" />
-            </p>
-          </section>
         </section>
+
 
         <!-- Thank yous! -->
         <section>
@@ -190,7 +205,6 @@
 
         <!-- Part 1: Quick Overview of D8 Landscape -->
         <section>
-
           <!-- History -->
           <section>
             <h2>Let's talk about Drupal 8</h2>
@@ -201,6 +215,7 @@
               </ul>
             </aside>
           </section>
+
           <section>
             <h2>Where have we come from?</h2>
             <blockquote>Our many stages of evolution</blockquote>
@@ -212,6 +227,25 @@
             </aside>
           </section>
 
+          <!-- What's different about developing for D8 -->
+
+          <!--<aside class="notes">-->
+            <!--<ul>-->
+              <!--<li>PHP 5.5 Required!</li>-->
+              <!--<li>Symfony2 Framework and Object-oriented programming</li>-->
+              <!--<li>Goodbye hooks (for the most part) & Hello Routes, Plugins, Services, and Events</li>-->
+              <!--<li>Configuration and Bundle Entities</li>-->
+              <!--<li>Better Test Framework &#45;&#45; Kernel replaces SimpleTests, Unit Tests</li>-->
+              <!--<li>Caching &#45;&#45; D8 uses partial page caching and cache tags. Twig templates get compiled and cached.</li>-->
+              <!--<li>Composer</li>-->
+              <!--<li>Different directory structure &#45;&#45; Core is in the directory "core"; your modules and themes go into the modules and themes directories in the project root.</li>-->
+              <!--<li>Twig and SMACSS & BEM standards, and Stable and Classy core base themes</li>-->
+            <!--</ul>-->
+          <!--</aside>-->
+        </section>
+
+        <!-- Who's using Drupal 8 now? -->
+        <section>
           <section>
             <h2>Who using Drupal 8 now?</h2>
           </section>
@@ -245,29 +279,6 @@
             <h2>Many, Many, Many More</h2>
             <p><a href="https://www.drupal.org/case-studies/featured/all/drupal-8.x">drupal.org/case-studies/featured/all/drupal-8.x</a></p>
           </section>
-
-          <!-- What's different about developing for D8 -->
-          <section>
-            <h2>What's changed?</h2>
-            <ul>
-              <li>PHP 5.5 Required!</li>
-              <li>Symfony2 Framework and Object-oriented programming</li>
-              <li>Goodbye hooks (for the most part) & Hello Routes, Plugins, Services, and Events</li>
-              <li>Configuration and Bundle Entities</li>
-              <li>Better Test Framework</li>
-              <li>Caching</li>
-              <li>Composer</li>
-              <li>Different directory structure</li>
-              <li>Twig and SMACSS & BEM standards, and Stable and Classy core base themes</li>
-            </ul>
-            <aside class="notes">
-              <ul>
-                <li>D8 uses partial page caching and cache tags. Twig templates get compiled and cached.</li>
-                <li>Kernel replaces SimpleTests, Unit Tests</li>
-                <li>Core is in the directory "core"; your modules and themes go into the modules and themes directories in the project root.</li>
-              </ul>
-            </aside>
-          </section>
         </section>
 
         <!-- Tips on Tools -->
@@ -277,11 +288,8 @@
              <ul>
                <li>You will need a robust IDE (PHPStorm, Eclipse, Netbeans)</li>
                <li>Install and setup <a href="https://xdebug.org/">XDebug</a> with your IDE</li>
-               <li><a href="https://github.com/drush-ops/drush</li>">Drush 7</a></li>
                <li><a href="https://drupalconsole.com/">Drupal Console</a></li>
                <li>Get acquainted with the <strong>Web Profiler</strong> module packaged with <a href="https://www.drupal.org/project/devel">Devel</a></li>
-               <li>Handy D8 Module Status list page: <a href="http://d8status.md-systems.ch/">http://d8status.md-systems.ch/</a></li>
-               <li>The Examples project: <a href="https://www.drupal.org/project/examples">https://www.drupal.org/project/examples</a></li>
              </ul>
              <aside class="notes">
               <ul>
@@ -307,18 +315,18 @@
               </ul>
             </aside>
           </section>
-        </section>
 
-        <section>
-          <h2>Play Along!</h2>
-          <img src="images/logos/ss_logo_blkbg.png" class="no-style-image" style="width: 360px;"/>
-          <blockquote>StackStarter.io/spin</blockquote>
-          <blockquote style="font-size: .8em">Spin Code: #trainingday</blockquote>
-          <aside class="notes">
-            <ul>
-              <li>Set up stackstarter on one laptop / pair</li>
-            </ul>
-          </aside>
+          <section>
+            <h2>Play Along!</h2>
+            <img src="images/logos/ss_logo_blkbg.png" class="no-style-image" style="width: 360px;"/>
+            <blockquote>StackStarter.io/spin</blockquote>
+            <blockquote style="font-size: .8em">Spin Code: #trainingday</blockquote>
+            <aside class="notes">
+              <ul>
+                <li>Set up stackstarter on one laptop / pair</li>
+              </ul>
+            </aside>
+          </section>
         </section>
 
         <!-- Getting situated in the new environment -->
@@ -368,6 +376,7 @@
 
           <section>
             <h2>Lunch time!</h2>
+            <img src="images/lunch.png"/>
           </section>
         </section>
 
@@ -448,6 +457,7 @@
 
       <a class="logo" href="http://www.segosolutions.net/"><img src="images/logos/sego_logo_blkbg.png" alt="Sego Solutions logo" height="50" /></a>
       <a class="logo" href="https://www.phase2technology.com/"><img src="images/logos/p2_logo_reverse.png" alt="Phase2 Technology logo" height="50" /></a>
+      <a class="logo" href="http://www.nypl.org/"><img src="images/logos/NYPL-logo-black-pos.png" alt="New York Public Library logo" height="50" /></a>
       <a class="logo" href="https://www.dosomething.org/"><img src="images/logos/dosomething_logo.svg" alt="DoSomething.org logo" height="50" /></a>
       <a class="logo" href="https://www.teksystems.com/"><img src="images/logos/TEKsystems_logotype_RGB%20png.png" alt="TEKsystems logo" height="50" /></a>
 
